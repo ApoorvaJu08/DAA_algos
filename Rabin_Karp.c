@@ -4,35 +4,35 @@
 #define d 10
 int search(int T[], int P[], int n, int m, int q)
 {
-    int h;
+    int h, i;
     int a = pow(d, (m-1));
     h = (a % q); 
     int p = 0;
     int t = 0;
-    for(int i = 1; i <= m; i++)
+    for(i = 1; i <= m; i++)
     {
         p = (((d*p) + P[i]) % q);
         t = (((d*t) + T[i]) % q);
     }
-    for(int s = 0; s <= (n-m); s++)
-    {
-        if(p == t)
-        {
-            for(int j = 1; j <= m; j++)
-            {
-                if(P[j] = T[s+j])
-                {
-                    printf("Pattern match at shift %d", s);
-                }
-            }   
-        }
-        if(s < (n-m))
-        {
-            t = ((d * (t - (T[s+1] * h))) + T[s+m+1] % q);
-            if(t < 0)
-                t = (t + q);
-        }
-    }
+    // for(int s = 0; s <= (n-m); s++)
+    // {
+    //     if(p == t)
+    //     {
+    //         for(int j = 1; j <= m; j++)
+    //         {
+    //             if(P[j] == T[s+j])
+    //             {
+    //                 printf("Pattern match at shift %d", s);
+    //             }
+    //         }   
+    //     }
+    //     if(s < (n-m))
+    //     {
+    //         t = ((d * (t - (T[s+1] * h))) + T[s+m+1] % q);
+    //         if(t < 0)
+    //             t = (t + q);
+    //     }
+    // }
 }
 
 int main()
